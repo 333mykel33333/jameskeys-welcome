@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>JamesKeys | Welcome drop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main id="app" class="app is-hidden" aria-hidden="true">
+        <section class="panel" role="dialog" aria-modal="true" aria-labelledby="title" aria-describedby="intro">
+            <div class="panel-glow" aria-hidden="true"></div>
+            <div id="ambient-particles" class="ambient-particles" aria-hidden="true"></div>
+            <header class="topbar">
+                <div class="brand">
+                    <img class="brand-logo" src="assets/jameskeys-logo.jpg" alt="JamesKeys — City Welcome Desk">
+                </div>
+                <div class="topbar-right">
+                    <span class="secure-label"><span class="secure-dot"></span> SECURE CLAIM PORTAL</span>
+                    <button id="sound-toggle" class="sound-button" type="button" aria-label="Turn interface sounds off" aria-pressed="true" title="Interface sounds on">
+                        <svg class="sound-on-icon" aria-hidden="true" viewBox="0 0 20 20"><path d="M3 8v4h3l4 3V5L6 8H3Z"/><path d="M13 7a4 4 0 0 1 0 6m2-8a7 7 0 0 1 0 10"/></svg>
+                        <svg class="sound-off-icon" aria-hidden="true" viewBox="0 0 20 20"><path d="M3 8v4h3l4 3V5L6 8H3Z"/><path d="m14 8 4 4m0-4-4 4"/></svg>
+                        <span>SOUND</span>
+                    </button>
+                    <button id="close" class="close-button" type="button" aria-label="Close welcome menu">
+                        <svg aria-hidden="true" viewBox="0 0 20 20"><path d="m5 5 10 10M15 5 5 15"/></svg>
+                    </button>
+                </div>
+            </header>
+
+            <div class="content">
+                <section class="welcome-copy">
+                    <div class="headline-row">
+                        <div>
+                            <h1 id="title">JAMES KEYS<br><span>WELCOME PACK</span></h1>
+                        </div>
+                    </div>
+                    <p id="intro" class="intro">Choose the ride that feels like you, then press the claim button. Your welcome package is ready.</p>
+                    <div class="welcome-meta">
+                        <span><b class="meta-icon">01</b> ONE-TIME CHARACTER CLAIM</span>
+                        <span><b class="meta-icon">⌖</b> DELIVERY TO NEAREST PUBLIC GARAGE</span>
+                    </div>
+                </section>
+
+                <section class="garage-section" aria-labelledby="vehicle-heading">
+                    <div class="section-heading">
+                        <div class="section-title-wrap">
+                            <span class="section-number">01</span>
+                            <div><h2 id="vehicle-heading">Choose your first ride</h2><p>One key. One choice. Yours to keep.</p></div>
+                        </div>
+                        <span class="selection-count"><span id="selected-count">0</span> / 1 SELECTED</span>
+                    </div>
+
+                    <div class="vehicle-layout">
+                        <div id="vehicles" class="vehicles" aria-label="Available welcome vehicles"></div>
+                        <aside class="vehicle-inspector" aria-label="Selected vehicle details">
+                            <div class="inspector-topline"><span>VEHICLE PROFILE</span><span class="live-indicator">LIVE</span></div>
+                            <div class="vehicle-art" aria-hidden="true">
+                                <div class="art-grid"></div>
+                                <div class="art-orbit orbit-one"></div>
+                                <div class="art-orbit orbit-two"></div>
+                                <svg class="car-art" viewBox="0 0 420 170" role="presentation">
+                                    <defs>
+                                        <linearGradient id="carBody" x1="0" y1="0" x2="1" y2="1">
+                                            <stop offset="0" stop-color="#e7e9eb"/>
+                                            <stop offset=".42" stop-color="#73797e"/>
+                                            <stop offset="1" stop-color="#24282c"/>
+                                        </linearGradient>
+                                        <linearGradient id="carGlass" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0" stop-color="#15232b"/>
+                                            <stop offset="1" stop-color="#304a50"/>
+                                        </linearGradient>
+                                        <filter id="glow"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                                    </defs>
+                                    <ellipse cx="212" cy="142" rx="151" ry="12" fill="#d0d4d7" opacity=".14"/>
+                                    <path d="m55 111 14-28q5-9 20-13l58-12 41-33q8-7 20-7h56q17 0 29 13l32 34 42 11q10 3 13 14l5 26-17 14h-27a38 38 0 0 0-75 0h-91a38 38 0 0 0-75 0H70l-18-11z" fill="url(#carBody)" stroke="#d0d4d7" stroke-width="2"/>
+                                    <path d="m157 63 38-30q5-4 12-4h25v34zm84-34h31q11 0 19 9l25 25h-75z" fill="url(#carGlass)" stroke="#a0e7df" stroke-width="1.5"/>
+                                    <path d="m71 94 78-4m206 3-35-8M197 65v37m49-37v37" fill="none" stroke="#b9fff5" stroke-opacity=".55" stroke-width="2"/>
+                                    <path d="m65 108 22-3m254 3 34 2" fill="none" stroke="#b8fff3" stroke-width="4" filter="url(#glow)"/>
+                                    <circle cx="127" cy="127" r="27" fill="#0a1015" stroke="#aeb4b9" stroke-width="3"/>
+                                    <circle cx="127" cy="127" r="12" fill="#1d2024" stroke="#d0d4d7" stroke-width="2"/>
+                                    <circle cx="319" cy="127" r="27" fill="#0a1015" stroke="#aeb4b9" stroke-width="3"/>
+                                    <circle cx="319" cy="127" r="12" fill="#1d2024" stroke="#d0d4d7" stroke-width="2"/>
+                                    <path d="M109 127h36m156 0h36m-210-12 10 12-10 12m210-24-10 12 10 12" fill="none" stroke="#aeb4b9" stroke-width="2"/>
+                                </svg>
+                                <img id="profile-image" class="car-photo" src="" alt="" hidden>
+                                <span class="art-corner corner-a"></span><span class="art-corner corner-b"></span>
+                                <span class="art-caption">JAMESKEYS VEHICLE <i> / / </i> SELECTED MODEL</span>
+                            </div>
+                            <div class="inspector-info">
+                                <div class="vehicle-name-row"><div><span id="profile-make" class="profile-make">SELECT A VEHICLE</span><h3 id="profile-name">Your ride awaits</h3></div><span id="profile-number" class="profile-number">—</span></div>
+                                <p id="profile-copy" class="profile-copy">Choose one of the available vehicles to view its profile.</p>
+                                <div class="profile-specs">
+                                    <div><span>CLASS</span><strong id="profile-class">—</strong></div>
+                                    <div><span>CONDITION</span><strong><i class="condition-dot"></i> FACTORY NEW</strong></div>
+                                    <div><span>DELIVERY</span><strong>NEAREST GARAGE</strong></div>
+                                </div>
+                                <div class="selected-confirmation"><span class="check-mark">✓</span><span id="selected-description">Select a vehicle to reserve your choice</span></div>
+                            </div>
+                        </aside>
+                    </div>
+                </section>
+
+                <section class="bottom-grid" aria-label="Rewards and claim">
+                    <div class="rewards-card">
+                        <div class="section-heading compact-heading">
+                            <div class="section-title-wrap"><span class="section-number">02</span><div><h2>Your welcome package</h2><p>Everything is included in one claim.</p></div></div>
+                            <span class="included-tag">INCLUDED</span>
+                        </div>
+                        <div class="reward-list">
+                            <div class="reward-item cash-item">
+                                <img class="reward-icon cash-image" src="assets/start-cash.png" alt="Cash reward illustration">
+                                <span class="reward-description"><strong>Starter cash</strong><small>Ready to spend around the city</small></span>
+                                <strong class="reward-value">$350,000</strong>
+                            </div>
+                            <div class="reward-item">
+                                <img class="reward-icon gun-icon" src="assets/weapon-glizzyg30.png" alt="Glizzy G30 pistol">
+                                <span class="reward-description"><strong>Glizzy G30</strong><small>Includes 500 rounds of 9mm</small></span>
+                                <span class="reward-value">× 1</span>
+                            </div>
+                            <div class="reward-item">
+                                <span class="reward-icon tech-icon">⌘</span>
+                                <span class="reward-description"><strong>Digital toolkit</strong><small>Darknet tablet, VPN &amp; house tablet</small></span>
+                                <span class="reward-value">× 3</span>
+                            </div>
+                        </div>
+                        <div class="delivery-note"><span class="note-icon">i</span><p>Your vehicle will be registered to your character and spawned at the <strong>nearest available public garage</strong>. Keys are included.</p></div>
+                    </div>
+
+                    <div class="claim-card">
+                        <div class="section-heading compact-heading">
+                            <div class="section-title-wrap"><span class="section-number">03</span><div><h2>Claim your package</h2><p>Select a vehicle, then press the button.</p></div></div>
+                        </div>
+                        <form id="claim-form">
+                            <button id="claim-button" type="submit">
+                                <span class="button-main">CLAIM VEHICLE &amp; PACKAGE</span>
+                                <span class="button-arrow" aria-hidden="true">→</span>
+                            </button>
+                        </form>
+                        <p class="claim-fineprint"><span class="fineprint-lock">◇</span> Use <strong>/welcome</strong> to open this menu. One claim per character.</p>
+                    </div>
+                </section>
+
+                <div id="status" class="status" role="status" aria-live="polite" aria-atomic="true"></div>
+                <footer class="footer">
+                    <span class="footer-brand">JK<span> / </span>WELCOME OPERATIONS</span>
+                    <span id="footer-state"><i class="footer-dot"></i> SYSTEM READY</span>
+                    <span class="escape-hint"><kbd>ESC</kbd> CLOSE</span>
+                </footer>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
